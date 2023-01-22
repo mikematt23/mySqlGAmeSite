@@ -1,16 +1,15 @@
 const express = require('express')
+const getActions = require('../controllers/getController')
 const router = express.Router()
-const db = require('../data/database')
 
 
-router.get('/',async (req,res)=>{
+router.get('/', getActions.home)
 
-  let users = await db.query("SELECT * FROM railway.users")
-   
-  console.log(users[0])
-  
-  res.render('home')
-})
+router.get('/logIn',getActions.logIn)
+
+router.get('/signUp',getActions.signUp)
+
+router.get('/user',getActions.user)
 
 
 module.exports = router
