@@ -1,0 +1,26 @@
+<nav>
+  <div>
+    <ul>
+      <% if(!locals.isAuth){ %>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/logIn">Log-In</a>
+        </li>
+        <li>
+          <a href="/signUp">Sign-Up</a>
+        </li>
+      <% } %>  
+      <% if(locals.isAuth){ %>
+        
+        <li>
+          <a href="/startGame"> Start Game</a>
+        </li>
+        <form action="/logOut" method="POST">
+          <button>Log-Out</button>
+        </form>
+      <% } %>    
+    </ul>
+  </div>
+</nav>
