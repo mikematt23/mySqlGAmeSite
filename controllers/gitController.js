@@ -1,5 +1,4 @@
 function home(req,res){
-  req.session.isAuth = false
   res.render('home')
 }
 //
