@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path');
 const { env } = require('process');
 const routes = require('./routes/userRoutes')
+const postRoute = require('./routes/postSiteRoutes')
 
 const app = express()
 
