@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path');
+const { env } = require('process');
 const routes = require('./routes/userRoutes')
 
 const app = express()
@@ -9,4 +10,4 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 
-app.listen(3000)
+app.listen(process.env.PORT)
