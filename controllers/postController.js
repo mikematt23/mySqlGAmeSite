@@ -1,5 +1,5 @@
 const userActions = require('../modles/userModles')
-const bcrypt = require('bcrypt')
+
 
 async function logIn (req,res){
   const name = req.body.userName
