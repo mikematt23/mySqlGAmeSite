@@ -1,5 +1,5 @@
 const express = require('express')
-const getActions = require('../controllers/getController')
+const getActions = require('../controllers/gitController')
 const router = express.Router()
 
 
