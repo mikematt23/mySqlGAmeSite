@@ -3,7 +3,7 @@ function home(req,res){
 }
 //
 function logIn (req,res){
-  res.render('log-in')
+  res.render('log-in',{m:""})
 }
 //
 function signUp(req,res){

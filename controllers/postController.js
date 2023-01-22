@@ -5,10 +5,10 @@ async function logIn (req,res){
   const name = req.body.userName
   const password = req.body.password
   const user = await userActions.logIn(name)
-  console.log(user)
-  // if(user[0].length === 0){
-  //   return res.render('404',{m : "User name or password is not correct"})
-  // }
+  console.log(user[0].length)
+  if(user[0].length === 0){
+    return res.render('log-in',{m : "User name or password is not correct"})
+  }
   // if(user){
   //   const hash = user[0][0].password
   //   const isUser = await bcrypt.compare(password,hash);

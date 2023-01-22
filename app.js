@@ -6,12 +6,14 @@ const postRoute = require('./routes/postSiteRoutes')
 
 const app = express()
 
-app.use(routes)
-app.use(postRoute)
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
 
+app.use(routes)
+app.use(postRoute)
 
-app.listen(process.env.PORT)
+let port = process.env.PORT || 3000
+app.listen(port)
