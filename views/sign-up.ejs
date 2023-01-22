@@ -1,0 +1,39 @@
+<%- include('includes/head') %> 
+  <title>Sign-Up</title>
+</head>
+<body>
+  <%- include('includes/nav') %> 
+  <section>
+    <H1>Hello and Welcome Please Fill  Out the Info to Continue</H1>
+    <div>
+      <form action="/signUp" method="POST">
+        <div class="form-element">
+          <label for="userName">User Name</label>
+          <input name="userName" type="text" require>
+        </div>
+        <div class="form-element">
+          <label for="ConfirmUserName">Confirm User Name</label>
+          <input name="ConfirmUserName" type="text" require>
+        </div>
+        <div class="form-element">
+          <label for="password">password</label>
+          <input name="password" type="password" require/>
+        </div>
+        <div class="form-element">
+          <label for="ConfirmPassword">Confirm Password</label>
+          <input name="ConfirmPassword" type="password" require/>
+        </div>
+        <div class="form-element">
+          <label for="email">Email</label>
+          <input name="email" type="text" require/>
+        </div>
+        <div class="form-element">
+          <label for="ConfirmEmail">Confirm Email</label>
+          <input name="ConfirmEmail" type="text" require/>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>

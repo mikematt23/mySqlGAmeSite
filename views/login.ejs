@@ -1,0 +1,23 @@
+<%- include('includes/head') %> 
+  <title>Log-In</title>
+</head>
+<body>
+  <%- include('includes/nav') %> 
+  <section>
+    <H1>Welcome Back Please Log-in To Continue</H1>
+    <div>
+      <form action="/logIn" method="POST">
+        <div class="form-element">
+          <label for="userName">User Name</label>
+          <input name="userName" type="text" required>
+        </div>
+        <div class="form-element">
+          <label for="password">Password</label>
+          <input name="password" type="password" required/>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>

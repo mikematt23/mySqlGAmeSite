@@ -1,0 +1,14 @@
+<%- include('includes/head') %> 
+  <title>Guessing Game</title>
+</head>
+<body>
+  <%- include('includes/nav') %> 
+  <section>
+    <H1>Welcome Back</H1>
+    <h2><%= user.userName  %> </h2>
+    <section>
+     <p>The last level completed was <span><%= user.level %> </span> with <span><%=user.lives%></span> lives left</p>
+    </section>
+  </section>
+</body>
+</html>
