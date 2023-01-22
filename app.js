@@ -7,6 +7,7 @@ const postRoute = require('./routes/postSiteRoutes')
 const app = express()
 
 app.use(routes)
+app.use(postRoute)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({extended:true}))
