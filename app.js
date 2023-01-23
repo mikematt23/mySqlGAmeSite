@@ -16,4 +16,4 @@ app.use(routes)
 // app.use(postRoute)
 
 let port = process.env.PORT || 3000
-app.listen(port)
+app.listen(process.env.PORT)
