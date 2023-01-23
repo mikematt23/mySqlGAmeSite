@@ -1,4 +1,5 @@
 const userActions = require('../modles/userModles')
+const bcrypt = require('bcrypt')
 
 
 
