@@ -1,4 +1,28 @@
 const userActions = require('../modles/userModles')
+const bcrypt = require('bcrypt')
+
+
+
+
+async function userSignUp(req,res){
+  console.log(req.body)
+  const name = req.body.userName
+  const password = req.body.password
+  const email = req.body.email
+  const level = 0
+  const lives = 4
+  
+  const hashedPassword = await bcrypt.hash(password,3)
+  let userCheck = await userActions.logIn(name)
+  console.log(userCheck[0].length)
+  if(userCheck[0].length === 1){
+   return res.render('404',{m: "You already have an account please sing in"})
+  }
+
+  await userActions.insertUser(name,hashedPassword,email,level,lives)
+  res.redirect('/logIn')
+}
+
 
 
 async function logIn (req,res){
@@ -27,4 +51,5 @@ async function logIn (req,res){
 
 module.exports = {
   logIn: logIn,
+  userSignUp: userSignUp
 }
