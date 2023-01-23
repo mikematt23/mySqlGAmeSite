@@ -1,5 +1,5 @@
 const userActions = require('../modles/userModles')
-const bcrypt = require('bcrypt')
+
 
 
 
@@ -12,7 +12,7 @@ async function userSignUp(req,res){
   const level = 0
   const lives = 4
   
-  const hashedPassword = await bcrypt.hash(password,3)
+  // const hashedPassword = await bcrypt.hash(password,3)
   let userCheck = await userActions.logIn(name)
   console.log(userCheck[0].length)
   if(userCheck[0].length === 1){
