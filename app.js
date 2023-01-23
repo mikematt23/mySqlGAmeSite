@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
 
 app.use(routes)
-app.use(postRoute)
+// app.use(postRoute)
 
 let port = process.env.PORT || 3000
 app.listen(port)
