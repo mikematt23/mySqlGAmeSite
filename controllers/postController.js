@@ -7,7 +7,7 @@ const userActions = require('../modles/userModles')
 
 
 async function userSignUp(req,res){
-  console.log(req.body)
+ 
   const name = req.body.userName
   const password = req.body.password
   const email = req.body.email
