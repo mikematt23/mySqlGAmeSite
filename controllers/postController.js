@@ -32,13 +32,14 @@ async function logIn (req,res){
   const name = req.body.userName
   const password = req.body.password
   const user = await userActions.logIn(name)
-  console.log(user[0])
+
   if(user[0].length === 0){
     return res.render('log-in',{m : "User name or password is not correct"})
   }
   if(user[0].length === 1){
     const hash = user[0].password
-    const isUser = await bcrypt.compare(password,hash);
+    const isUser =  bcrypt.compare(hash,3);
+    console.log(isUser)
     if(!isUser){
        res.render('404',{m: "Please check your information and try again"})
     }
