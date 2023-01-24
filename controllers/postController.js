@@ -38,7 +38,7 @@ async function logIn (req,res){
   }
   if(user[0].length === 1){
     const hash = user[0].password
-    const isUser =  bcrypt.compare(hash,3);
+    const isUser = await  bcrypt.compare(hash,3);
     console.log(isUser)
     if(!isUser){
        res.render('404',{m: "Please check your information and try again"})
