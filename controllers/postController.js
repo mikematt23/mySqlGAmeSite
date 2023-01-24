@@ -16,14 +16,14 @@ async function userSignUp(req,res){
   
   const hashedPassword = await bcrypt.hash(password,3)
   console.log(hashedPassword)
-  // let userCheck = await userActions.logIn(name)
-  // console.log(userCheck[0].length)
-  // if(userCheck[0].length === 1){
-  //  return res.render('404',{m: "You already have an account please sing in"})
-  // }
+  let userCheck = await userActions.logIn(name)
+  console.log(userCheck[0].length)
+  if(userCheck[0].length === 1){
+   return res.render('404',{m: "You already have an account please sing in"})
+  }
 
-  // await userActions.insertUser(name,hashedPassword,email,level,lives)
-  // res.redirect('/logIn')
+  await userActions.insertUser(name,hashedPassword,email,level,lives)
+  res.redirect('/logIn')
 }
 
 
