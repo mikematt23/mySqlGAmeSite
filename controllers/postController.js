@@ -46,9 +46,9 @@ async function logIn (req,res){
 
     res.locals.isAuth = true
 
-    req.session.save(function(){
-      res.render('user',{user: user[0]})
-    })
+   
+    res.render('user',{user: user[0]})
+
    
   }
 }
