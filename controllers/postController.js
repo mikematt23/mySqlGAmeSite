@@ -37,17 +37,17 @@ async function logIn (req,res){
     return res.render('log-in',{m : "User name or password is not correct"})
   }
   if(user[0].length === 1){
-    const hash = user[0].password
-    const isUser = await  bcrypt.compare(hash,3);
+    const salt = bcrypt.genSaltSync(3);
+    const isUser = await bcrypt.compare(password,user[0][0].password);
     console.log(isUser)
     if(!isUser){
-       res.render('404',{m: "Please check your information and try again"})
+       res.render('log-in',{m: "User name or password is not correct"})
     }
 
     res.locals.isAuth = true
 
    
-    res.render('user',{user: user[0]})
+    res.render('user',{user: user[0][0]})
 
    
   }
