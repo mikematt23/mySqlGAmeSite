@@ -39,21 +39,26 @@ async function logIn (req,res){
   if(user[0].length === 1){
     const salt = bcrypt.genSaltSync(3);
     const isUser = await bcrypt.compare(password,user[0][0].password);
-    console.log(isUser)
     if(!isUser){
        res.render('log-in',{m: "User name or password is not correct"})
     }
 
     res.locals.isAuth = true
+    req.session.user = user[0][0]
+    req.session.save(function(){
+      res.render('user',{user: user[0][0]})
+    })
 
-   
-    res.render('user',{user: user[0][0]})
-
-   
   }
+}
+
+function logOut (req,res){
+  res.locals.isAuth = false
+  res.redirect('/')
 }
 
 module.exports = {
   logIn: logIn,
-  userSignUp: userSignUp
+  userSignUp: userSignUp,
+  logOut: logOut
 }
