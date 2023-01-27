@@ -6,6 +6,8 @@ const mysql2 = require('mysql2/promise')
 const MySQlStore = require('express-mysql-session')(session)
 const routes = require('./routes/userRoutes')
 const postRoute = require('./routes/postSiteRoutes')
+const gameGetRoutes = require('./routes/gameRoutes')
+const gamePostRoutes = require('./routes/postGameRoutes')
 
 const app = express()
 
@@ -35,6 +37,8 @@ app.use(express.static('public'))
 
 app.use(routes)
 app.use(postRoute)
+app.use(gameGetRoutes)
+app.use(gamePostRoutes)
 
 let port = process.env.PORT || 3000
 app.listen(process.env.PORT)

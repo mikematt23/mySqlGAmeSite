@@ -1,0 +1,21 @@
+<%- include('includes/head') %>
+  <title>Guessing Game</title>
+</head>
+<body>
+  <%- include('includes/nav') %> 
+  <section>
+    <H1>You Have <%= lives %> Lives To guess a number between 1 and 10  <%= number %></H1>
+  </section>
+  <% console.log(message, "in ejs") %> 
+  <p><%= message  %> </p>
+  <section>
+    <form action="/testLevelOne" method="POST">
+      <label for="guess">Your Guess</label>
+      <input type="number" name="guess">
+      <label for="anwser"></label>
+      <input type="number" id="value" name="anwser" value="<%= number %>" >
+      <button>check</button>
+    </form>
+  </section>
+</body>
+</html>
