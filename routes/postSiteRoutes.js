@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.post('/signUp', posts.userSignUp)
 router.post('/logIn', posts.logIn)
-router.post('/logOut',posts.logOut)
+router.post('/log-out',posts.logOut)
 
 
 module.exports = router
