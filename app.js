@@ -41,4 +41,4 @@ app.use(gameGetRoutes)
 app.use(gamePostRoutes)
 
 let port = process.env.PORT || 3000
-app.listen(process.env.PORT)
+app.listen(3000)

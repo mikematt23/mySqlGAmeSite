@@ -3,12 +3,12 @@ const db = require('../data/database')
 
 async function updateLevel(userLevel, userId){
     let query = `UPDATE users SET level = ${userLevel} WHERE usersID = ${userId}`
-    // await db.query(query)
+    await db.query(query)
 }
 
 async function resetLives(userId){
   let query = `UPDATE users SET lives = 4 WHERE usersID = ${userId}`
-  // await db.query(query) 
+  await db.query(query) 
 }
 
 async function updateLives(userId,userLives){

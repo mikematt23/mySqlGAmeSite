@@ -13,7 +13,7 @@ async function testLevelOne(req,res){
       res.locals.isAuth = true 
      res.render('gameOver')
     }
-    
+    res.locals.isAuth = true
     return res.render('level1',{message : "Your Number is HIGHER", lives : lives[0][0].lives , number : req.body.anwser})
   }
   
@@ -25,6 +25,7 @@ async function testLevelOne(req,res){
       res.locals.isAuth = true 
       res.render('gameOver')
      }
+     res.locals.isAuth = true
     return res.render('level1',{message : "Your Number is LOWER", lives : lives[0][0].lives, number : req.body.anwser})
   }
 
@@ -47,7 +48,7 @@ async function testLevelTwo (req,res){
        res.locals.isAuth = true 
        res.render('gameOver')
      }
-
+     res.locals.isAuth = true
      res.render('level2',{message : "Your Number is HIGHER", lives : lives[0][0].lives , number : req.body.anwser})
   }
   
@@ -60,7 +61,7 @@ async function testLevelTwo (req,res){
       res.locals.isAuth = true 
       res.render('gameOver')
      }
-
+    res.locals.isAuth = true
     return res.render('level2',{message : "Your Number is LOWER", lives : lives[0][0].lives, number : req.body.anwser})
   }
 
@@ -83,7 +84,7 @@ async function testLevelThree(req,res){
       res.locals.isAuth = true 
       res.render('gameOver')
      }
-
+     res.locals.isAuth = true
     return res.render('level3',{message : "Your Number is HIGHER", lives : lives[0][0].lives , number : req.body.anwser})
   }
   
@@ -96,7 +97,7 @@ async function testLevelThree(req,res){
       res.locals.isAuth = true 
       res.render('gameOver')
      }
-
+     res.locals.isAuth = true
     return res.render('level3',{message : "Your Number is LOWER", lives : lives[0][0].lives, number : req.body.anwser})
   }
 
